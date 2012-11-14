@@ -1,0 +1,10 @@
+""" Configuration """
+
+# Get Bing AppID from https://ssl.bing.com/webmaster/developers/appids.aspx
+BING_APPID = ''
+
+FILE_FROM = 'lang.properties'
+FILE_TO = 'translated.properties'
+
+LANG_FROM = 'en'
+LANG_TO = 'zh-chs'
