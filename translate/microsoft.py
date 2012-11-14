@@ -1,3 +1,5 @@
+""" Microsoft Translate Module """
+
 import gevent
 from gevent import monkey
 monkey.patch_all()
@@ -17,11 +19,13 @@ class Translator(object):
         self.to_lang = to_lang
 
     def translate_list(self, texts):
+        """ translate an iterable """
         jobs = [gevent.spawn(self.translate, text) for text in texts]
         gevent.joinall(jobs)
         return [job.value for job in jobs]
 
     def translate(self, text):
+        """ translate a text """
         if not text:
             return ""
 

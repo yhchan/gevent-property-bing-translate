@@ -1,7 +1,11 @@
+""" Parse properties """
+
+
 def parse_properties(filename):
+    """ Parse properties files into dict """
     langs = {}
-    with open(filename, 'r') as f:
-        lines = [line.strip() for line in f.readlines()]
+    with open(filename, 'r') as fobj:
+        lines = [line.strip() for line in fobj.readlines()]
         for line in lines:
             idx = line.find('=')
             if idx == -1:
